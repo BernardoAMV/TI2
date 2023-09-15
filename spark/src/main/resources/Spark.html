@@ -1,0 +1,100 @@
+
+<html>
+<head>
+<meta content="text/html; charset = UTF-8" http-equiv="content-type">
+
+<title>Controle de Informacoes</title>
+<script src="script.js"></script>
+</head>
+
+
+<body>
+	<h1>Controle de Cadastro</h1>
+	<form id="meuForm">
+	
+		<label for="codigo">Codigo:</label>
+        <input type="text" id="codigo" name="Codigo" required><br><br>
+        
+        <label for="login">Login:</label>
+        <input type="text" id="login" name="Login" required><br><br>
+        
+        <label for="senha">Senha:</label>
+        <input type="text" id="senha" name="senha" step="0.01" required><br><br>
+        
+        <label for="sexo">Sexo:</label>
+        <input type="text" id="sexo" name="sexo" required><br><br>
+        
+    </form>
+
+	<button id="inserir">Inserir Usuário</button>
+	<button id="atualizar">Atualizar Usuário</button>
+    
+    <h1>Remoção de Usuario</h1>
+    <form id = "delete">
+        <label for="id_consulta">ID do Usuário para Remoção:</label>
+        <input type="number" id="id_consulta" name="id_consulta" required><br><br>
+        
+    </form>
+
+	<button id = "deletar">Deletar Usuário </button>
+
+    <button id="listar" onclick="listaUsuarios" >Listar Usuarios</button>
+    
+	<div id="jsonContainer">
+
+
+	</div>
+
+	<style>
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: white;
+}
+
+
+.input--main__style {
+	background-color: #00FF00;
+}
+
+.input--button {
+	font-weight: bold;
+	font-family: Arial;
+	font-size: medium;
+	border-color: transparent;
+	display: block;
+	margin: 0px auto;
+	margin-bottom: 10px;
+	color: white;
+}
+
+.input--register {
+	display: inline;
+}
+
+input {
+	display: block;
+	border-radius: 7px;
+	padding: 10px;
+	border-style: solid;
+	border-color: lightgray;
+	color: black;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+form p {
+	text-align: initial;
+	display: inline;
+	margin-left: 15px;
+}
+
+.p--nomargin {
+	margin-left: 0px;
+	margin-right: 10px;
+}
+</style>
+</body>
+</html>
