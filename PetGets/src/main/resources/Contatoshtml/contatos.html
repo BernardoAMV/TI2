@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>PetGets</title>
+</head>
+<body>
+    
+    <header>
+        <img src="../imagens/logo.jpeg" alt="logo" id="logo">
+        <img src="../imagens/logomarca.jpeg" alt="logo" id="marca">
+      </header>
+    
+      <div class="menu">
+        <div class="topnav">
+          <a href="../HomePage/index.html">Home</a>
+          <a href="../Contatoshtml/contatos.html">Contato</a>
+          <a href="../duvidashtml/duvidas.html">Dúvidas</a>
+          <p> <button class="login" onclick="showCadastro()">Entrar</button>
+    
+          </p>
+        </div>
+    
+        <div class="overlay"></div>
+    
+        <div class="cadastro hidden">
+          <div class="conteudo-centralizado">
+            <div class="login-form hidden">
+              <ul>
+                <li>
+                  <p>Login</p>
+                </li>
+                <li><input id="loginCnpjInstituicao" type="text" placeholder="CNPJ"></li>
+                <li><input id="loginSenhaInstituicao" type="password" placeholder="Senha"></li>
+                <li><button class="em_desenvolvimento" id="btnLoginInstituicao" onclick="validarLogin()">Entrar</button></li>
+                
+              </ul>
+            </div>
+            <ul>
+              <li>
+                <p>Cadastro de Instituições</p>
+              </li>
+              <li><input id="nomeInstituicao1234" type="text" placeholder="Nome da Instituição"></li>
+              <li><input type="text" id="cnpjInputInstituicao" placeholder="Digite o CNPJ"></li>
+              <li><input type="password" id="senhaInputInstituicao" placeholder="Senha"></li>
+              <li><input id="emailInstituicao" type="text" placeholder="Contato (E-mail, Telefone)"></li>
+              <li><button id="criarConta" onclick="salvarDados()">Criar conta Instituição</button></li>
+            </ul>
+          </div>
+        </div>
+    
+    
+    
+        <div class="container">
+          <div class="search">
+            <a class="pesquisar" href="" target="_blank"></a>
+            <input type="search" id="searchInput" placeholder="Pesquisar...">
+            <div class="list">
+            </div>
+            <div class="icon">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+      <div class="search-box">
+        <form>
+            
+          </form>
+    </div>
+        <div class="background">
+        
+    </div>
+</div>
+
+
+   <script src="javascript.js"></script>
+   
+</body>
+</html>

@@ -1,0 +1,491 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'kadwa';
+    text-decoration: none;
+    list-style: none;
+
+}
+
+.background {
+    background-size: cover;
+    background-position: center top;
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+}
+body{
+  background-image: url('../imagens/fundo1.jpg');
+  background-size: cover;
+}
+
+.cabeçalho-link{
+    background-color:#bd3a02 ;
+    
+    margin-top: 9px;
+    display: flex;
+    font-size: 2rem;
+    gap: 3rem;
+    margin-bottom: 1rem;
+    border: 1px solid white;
+}
+
+.cabeçalho-link a{
+    color: white;
+    margin-left: 100px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.cabeçalho-link a:hover{
+    color: #256447 ;
+}
+
+.background{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-top: 2rem;
+}
+
+.search-box{
+    background: #256447;
+}
+
+.fundo-tudo{
+    
+    background-color: #256447;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+  }
+  
+  input[type="text"] {
+    border: 1px solid white;
+    background-color: transparent;
+    padding: 10px;
+    width: 200px;
+    color: white;
+  }
+  
+  button[type="submit"] {
+    background-color: #ff692a;
+    border: 1px solid white;
+    color: white;
+    padding: 10px;
+    margin-left: 10px;
+  }
+
+  .card{
+    background: #bd4300;
+    width: 250px;
+    height: 350px;
+    border: 1px solid white;
+  }
+
+  .card-image{
+    width: 230px;
+    height: 230px;
+    margin-left: 9px;
+    margin-top: 9px;
+  }
+
+.card-content h3{
+    color: white;
+    margin-left: 10px;
+    margin-top: 6px;
+}
+
+.card-button {
+    background-color: #256447;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 5px 10px;
+    width: 160px;
+    margin-left: 45px;
+    margin-top: 11px;
+    margin-bottom: 8px;
+    transition: 0.3s;
+  }
+
+.card button:hover{
+    color: #ff692a;
+}
+
+.popup {
+  display: flex;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #256447;
+  border: 5px solid white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: 800px; /* Ajuste a largura conforme necessário */
+  max-width: 100%; /* Adicione esta linha */
+}
+
+.popup-content {
+  
+  padding: 20px;
+  color: white;
+  overflow-wrap: break-word; /* Adicione esta linha */
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.popup-info {
+  display: flex;
+  align-items: center;
+}
+
+.popup-details {
+  margin-left: 20px;
+}
+
+.popup-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.popup-distance {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.popup-address,
+.popup-website,
+.popup-email,
+.popup-phone {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.popup-additional-info {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.info-box {
+  background-color: #256447;
+  color: white;
+  padding: 10px;
+  margin: 0 10px;
+  border-radius: 5px;
+  border: 2px solid #ff692a;
+}
+
+.popup-image {
+  margin-left: 20px;
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  border: 4px solid #ff692a;
+  height: 200px; 
+  margin-top: 20px;
+ 
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+}
+
+.card-description {
+  display: none;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #ff692a;
+  color: white;
+}
+
+#search {
+  border-radius: 8px
+}
+
+header {
+  background-color: #ff692a;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: left;
+}
+
+#marca {
+  position: relative;
+  left: 86%;
+  transform: translateX(-100%);
+}
+
+@media screen and (max-width: 600px) {
+  #marca {
+      left: 0;
+      transform: none;
+  }
+}
+
+.menu {
+  background-color: #bd4300;
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px;
+  border: thin solid white;
+  display: flex;
+  align-items: center;
+}
+
+
+.menu a {
+  font-family: 'Kadwa';
+  float: left;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: whitesmoke;
+  padding: 23px 50px;
+  font-size: 20px;
+  font-weight: bold;
+  font-weight: 400;
+
+}
+
+.menu p {
+  margin: 0 0;
+  font-family: 'Kadwa';
+  float: left;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: whitesmoke;
+  padding: 21px 50px;
+  font-size: 20px;
+  font-weight: bold;
+  font-weight: 400;
+
+}
+
+.login {
+  font-family: 'Kadwa';
+  float: left;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 20px;
+  font-weight: bold;
+  font-weight: 400;
+  background-color: #bd4300;
+  border-radius: 6px;
+  padding: 15px 10px;
+  margin: -15px;
+  border: 2px solid;
+  
+}
+
+.login:hover {
+  background-color: #256447;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+  
+}
+
+.cadastro {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffffb7;
+  padding: 20px;
+  z-index: 1000;
+  border-radius: 10px;
+
+  opacity: 0;
+  transition: opacity 0.35s ease-in-out;
+}
+
+.cadastro.show {
+  opacity: 1; /* Quando a classe "show" for adicionada, a tela de cadastro será exibida */
+}
+
+.cadastro ul {
+  text-decoration: none;
+  list-style: none;
+  margin: 0px 0px;
+  padding: 0px 0px;
+}
+
+.cadastro a {
+  color: #256447;
+  
+}
+
+.conteudo-centralizado {
+  text-align: center;
+}
+
+.conteudo-centralizado a {
+  display: block;
+  text-align: left;
+}
+
+.cadastro ul li p {
+  background-color: #ff692a;
+  border-radius: 6px;
+  
+}
+
+.cadastro ul li p {
+  margin: 10px;
+  
+  
+}
+
+.cadastro ul li {
+  margin: 10px;
+}
+
+.cadastro input {
+  background-color: #ffffffab;
+  padding: 20px;
+  z-index: 1000;
+  border-radius: 10px;
+  color: black;
+}
+
+.cadastro button {
+  border: thin solid white;
+  padding: 20px;
+  background-color: #256447;
+  color: white;
+  border-radius: 6px;
+
+}
+
+.cadastro.hidden {
+  display: none;
+}
+
+button.login:hover {
+  cursor:pointer
+}
+
+.login-form ul li p {
+  text-align: center;
+  align-items: center;
+  float: none;
+}
+
+.menu a:hover {
+  background-color: #256447;
+  color: white;
+}
+
+.topnav {
+  width: 75%;
+}
+
+.topnav input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 12px;
+  margin-right: 16px;
+  font-size: 17px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 410px;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  margin: 5px 0px;
+
+}
+
+.container .search {
+  background: #FFFFFF;
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.20);
+}
+
+.search input {
+  height: 55px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 0 60px 0 20px;
+  font-size: 18px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.10);
+}
+
+.search .list {
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.list li {
+  list-style: none;
+  padding: 8px 12px;
+  display: none;
+  width: 100%;
+  cursor: default;
+  border-radius: 3px;
+}
+
+.list li:hover {
+  background: #efefef;
+}
+
+.search .icon {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  height: 55px;
+  width: 55px;
+  text-align: center;
+  line-height: 55px;
+  font-size: 20px;
+  color: black;
+  cursor: pointer;
+}
+
+a.pesquisar {
+  padding: 0px;
+}
+
+button a{
+  text-decoration: none;
+  color:white;
+}

@@ -1,0 +1,155 @@
+body 
+{
+    font-family: 'Kadwa';
+    background-image: url('/imagens/fundo1.jpg');
+    background-size: cover;
+    margin: 0px;
+    border: 0px;
+    padding: 0%;
+}
+
+#search
+{
+    border-radius: 8px
+}
+header
+{
+    background-color: #ff692a;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: left; 
+}
+
+#logo
+{
+    margin-left: 50px;
+    padding: 2px;
+}
+
+#marca
+{
+    margin-left: 830px;
+    padding: 2px;
+}
+
+.menu 
+{
+    background-color: #bd4300;
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+    border: thin solid white;
+    display: flex;
+}
+  
+  
+.menu a
+{  
+float: left;
+display: block;
+text-align: center;
+text-decoration: none;
+color: whitesmoke;
+padding: 16px 18px;
+font-size: 20px;
+}
+  
+.menu a:hover 
+{
+    background-color: #256447;
+    color: white;
+}
+ 
+main
+{
+    display: flex;
+}
+
+section
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+footer
+{
+    background-color: #ff692a;
+    position: relative;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}
+
+footer p 
+{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.topnav
+{
+width: 100%;
+}
+
+.topnav input[type=text] { 
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 12px;
+    margin-right: 16px;
+    font-size: 17px;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .sidebar{
+        display: none;
+    }
+    .topnav a, .topnav input[type=text] {
+      float: none;
+      display: block;
+      text-align: left;
+      width: 100%;
+      margin: 0;
+      padding: 14px;
+    }
+    .topnav input[type=text] {
+      border: 1px solid #ccc;
+    }
+  }
+
+  .faq
+  {
+    width: 53%;
+    margin-top: 10px;
+  }
+
+  .answer p {
+    color: white;
+    margin: 0;
+  }
+
+  .faq .question {
+    background-color: #bd4300;
+    margin-bottom: 10px;
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+    border: thin solid white;
+}
+
+.faq .answer {
+    display: none;
+    padding: 10px;
+}
+
+.faq .answer p {
+    margin: 0;
+}
+
+.faq .question.active {
+    background-color: #bd4300;
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Formulário PetGets</title>
+  <style>
+    body {
+      background-color: #256447;
+      font-family: "kadwa", sans-serif;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .container {
+
+      background-color: #1e4a36;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      color: #FF692A;
+      text-align: center;
+      font-weight: bold;
+      font-size: 40px;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #FF692A;
+      text-align: center;
+      font-weight: bold;
+      font-size: 32px;
+      margin-bottom: 30px;
+      text-align: left;
+    }
+
+    label {
+      font-family: "kadwa", sans-serif;
+      font-weight: bold;
+      color: white;
+      display: block;
+      margin-bottom: 10px;
+      margin-top: 8px;
+    }
+
+    input,
+    select,
+    textarea {
+      font-family: "kadwa", sans-serif;
+      width: 100%;
+      padding: 8px;
+      border: none;
+      border-radius: 4px;
+      background-color: #256447;
+      color: white;
+    }
+
+    input[type="submit"] {
+      background-color: #FF692A;
+      color: white;
+      cursor: pointer;
+      width: 49%;
+    }
+
+    input[type="cancel"] {
+      background-color: #FF692A;
+      color: white;
+      cursor: pointer;
+      width: 49%;
+    }
+
+    input[type="file"] {
+      background-color: transparent;
+      color: white;
+    }
+
+    a {
+      width: 100px;
+      margin-left: 200px;
+      text-decoration: none;
+      color: white;
+      padding-top: 7px;
+      padding-bottom: 7px;
+      padding-left: 150px;
+      padding-right: 150px;
+      background-color: #FF692A;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Formulário PetGets</h1>
+    <form id="formPetGets">
+
+
+      <!-- DADOS DO ANIMAL -->
+      <h2>Dados do animal:</h2>
+      <label for="nome-animal">Qual é o nome do animal?</label>
+      <input type="text" id="nome-animal" name="nome-animal" required><br>
+
+      <label for="tipo">Qual é a espécie do animal?</label>
+      <select id="tipo" name="tipo" required onchange="toggleOutroTipo()">
+        <option value="">Selecione a espécie</option>
+        <option value="Cachorro">Cachorro</option>
+        <option value="Gato">Gato</option>
+        <option value="Outro">Outro</option>
+      </select><br>
+
+      <div id="outroTipoContainer" style="display: none;">
+        <label for="outroTipo">Qual é o tipo?</label>
+        <input type="text" id="outroTipo" name="outroTipo"><br>
+      </div>
+
+
+
+      <label for="sexo">Sexo:</label>
+      <select id="sexo" name="sexo" required>
+        <option value="">Selecione o sexo</option>
+        <option value="Macho">Macho</option>
+        <option value="Fêmea">Fêmea</option>
+      </select><br>
+
+      <label for="idade">Idade (Em anos, somente numeros):</label>
+      <input type="text" id="idade" name="idade" required><br>
+
+      <label for="raca-animal">Raça:</label>
+      <input type="text" id="raca-animal" name="raca-animal" required><br>
+
+      <label for="descricao-animal">Descreva seu animal:</label>
+      <textarea id="descricao-animal" name="descricao-animal" required></textarea><br>
+
+
+      <label for="imagem">Envie uma foto do animal:</label>
+      <input type="file" id="imagem" name="imagem"><br>
+
+      <input type="button" value="Enviar" onclick="salvarDados()">
+      <a href="../HomePage/logado.html">Voltar</a>
+    </form>
+  </div>
+
+
+  <script src="app.js"></script>
+  <script>
+    function toggleOutroTipo() {
+      const outroTipoContainer = document.getElementById('outroTipoContainer');
+      const tipoSelect = document.getElementById('tipo');
+      if (tipoSelect.value === 'Outro') {
+        outroTipoContainer.style.display = 'block';
+      } else {
+        outroTipoContainer.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+
+</html>

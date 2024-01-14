@@ -1,0 +1,95 @@
+{
+"Contatos": [
+  {
+    "image": "img/Caoviver.jpeg",
+    "name": "Cao Viver",
+    "distance": "25",
+    "address": "Endereço do Cao Viver",
+    "website": "www.caoviver.com",
+    "email": "contato@caoviver.com",
+    "phone": "(00) 0000-1111",
+    "descricao": " Com o objetivo de acolher e abrigar cães e gatos em situação de risco e abandono, a Associação Cãoviver em Defesa dos Animais foi oficialmente fundada em agosto de 2003. O abrigo, instalado em um sítio inicialmente preparado para abrigar alguns poucos animais (o espaço foi utilizado no passado como estação de manejo destinada ao tratamento, reabilitação e reinserção a fauna de jaguatiricas apreendidas nas ações do IBAMA MG), hoje abriga mais de uma centena de cães e algumas dezenas de gatos. Durante todos esses anos de atividade, foram milhares de animais resgatados, muitos sem possibilidade de salvação, pois, via de regra, foram vítimas de abandono, atropelamento, espancamento dentre vários outros tipos de maus-tratos."
+  },
+  {
+    "image": "img/PetSmartlogo.jpeg",
+    "name": "PetSmart",
+    "distance": "5",
+    "address": "Endereço do PetSmart",
+    "website": "www.petsmart.com",
+    "email": "contato@petsmart.com",
+    "phone": "(00) 1111-2222",
+    "descricao": " Com o objetivo de acolher e abrigar cães e gatos em situação de risco e abandono, a Associação Cãoviver em Defesa dos Animais foi oficialmente fundada em agosto de 2003. O abrigo, instalado em um sítio inicialmente preparado para abrigar alguns poucos animais (o espaço foi utilizado no passado como estação de manejo destinada ao tratamento, reabilitação e reinserção a fauna de jaguatiricas apreendidas nas ações do IBAMA MG), hoje abriga mais de uma centena de cães e algumas dezenas de gatos. Durante todos esses anos de atividade, foram milhares de animais resgatados, muitos sem possibilidade de salvação, pois, via de regra, foram vítimas de abandono, atropelamento, espancamento dentre vários outros tipos de maus-tratos."
+  },
+  {
+    "image": "img/RockBicho.jpeg",
+    "name": "RockBicho",
+    "distance": "2",
+    "address": "Endereço do RockBicho",
+    "website": "www.rockbicho.com",
+    "email": "contato@rockbicho.com",
+    "phone": "(00) 3333-4444",
+    "descricao": " Com o objetivo de acolher e abrigar cães e gatos em situação de risco e abandono, a Associação Cãoviver em Defesa dos Animais foi oficialmente fundada em agosto de 2003. O abrigo, instalado em um sítio inicialmente preparado para abrigar alguns poucos animais (o espaço foi utilizado no passado como estação de manejo destinada ao tratamento, reabilitação e reinserção a fauna de jaguatiricas apreendidas nas ações do IBAMA MG), hoje abriga mais de uma centena de cães e algumas dezenas de gatos. Durante todos esses anos de atividade, foram milhares de animais resgatados, muitos sem possibilidade de salvação, pois, via de regra, foram vítimas de abandono, atropelamento, espancamento dentre vários outros tipos de maus-tratos."
+  },
+  {
+    "image": "img/gatocafe.jpeg",
+    "name": "GatoCafé",
+    "distance": "2",
+    "address": "Endereço do GatoCafé",
+    "website": "www.gatocafe.com",
+    "email": "contato@gatocafe.com",
+    "phone": "(00) 5555-6666",
+    "descricao": " São cafeterias que unem amor ao café e, também, afeição pelos gatos, colocando os frequentadores para interagirem com os felinos enquanto consomem a bebida. Percebemos a oportunidade de unir a proposta dos cat cafés com adoção e ajuda os gatinhos. A ideia já estava no coração, era impossível ver um gatinho na rua e saber que tínhamos a solução para ajudá-lo. Foi aí então que ficou decidido, o Gato Café tinha que acontecer! Nosso propósito é ajudar os gatinhos a encontrarem uma família, e que eles vivam em um ambiente incrível enquanto aguardam o seu tão sonhado lar! Queremos desmistificar as questões que existem em relação aos gatos e provar para o mundo como esses seres são perfeitos (mas aposto que isso você já sabe, né?)."
+  },
+  {
+    "image": "img/HumaneSociety.jpeg",
+    "name": "Humane Society",
+    "distance": "20",
+    "address": "Endereço do Humane Society",
+    "website": "www.humanesociety.com",
+    "email": "contato@humanesociety.com",
+    "phone": "(00) 7777-8888",
+    "descricao": " Com o objetivo de acolher e abrigar cães e gatos em situação de risco e abandono, a Associação Cãoviver em Defesa dos Animais foi oficialmente fundada em agosto de 2003. O abrigo, instalado em um sítio inicialmente preparado para abrigar alguns poucos animais (o espaço foi utilizado no passado como estação de manejo destinada ao tratamento, reabilitação e reinserção a fauna de jaguatiricas apreendidas nas ações do IBAMA MG), hoje abriga mais de uma centena de cães e algumas dezenas de gatos. Durante todos esses anos de atividade, foram milhares de animais resgatados, muitos sem possibilidade de salvação, pois, via de regra, foram vítimas de abandono, atropelamento, espancamento dentre vários outros tipos de maus-tratos."
+  },
+  {
+    "image": "img/ProjetoCaomer.jpeg",
+    "name": "Projeto Cãomer",
+    "distance": "15",
+    "address": "Endereço do Projeto Cãomer",
+    "website": "www.projetocaomer.com",
+    "email": "contato@projetocaomer.com",
+    "phone": "(00) 9999-0000",
+    "descricao": " O Projeto Cãomer foi iniciado no ano de 2015 por uma moradora do bairro Jardim Canadá, Kely Alves, que perdeu um animal por atropelamento e começou a pensar em quem cuidava dos animais que passavam por essas situações e não tinham ninguém para acolhê-los. Todos os animais regatados são encaminhados ao médico veterinário, fazem uma bateria de exames, recebem vermífugo, remédio para pulgas e carrapatos, são vacinados e quando chegam à idade certa, são castrados. Só são disponibilizados para adoção animais que estão com a saúde em perfeito estado. Até o ano de 2019 conseguimos realizar mais de 900 adoções de cães e gatos."
+  },
+  {
+    "image": "img/cantinhodafilo.jpeg",
+    "name": "Cantinho da Filó",
+    "distance": "30",
+    "address": "Endereço do Cantinho da Filó",
+    "website": "www.cantinhodafilo.com",
+    "email": "contato@cantinhodafilo.com",
+    "phone": "(00) 1234-5678",
+    "descricao": " O “CANTINHO DA FILÓ” é um abrigo temporário para cães e gatos de rua.Atualmente, estamos sob a nossa guarda mais de 270 animais entre cães e gatos, e todos eles passam por avaliação médica ao chegarem ao Abrigo. São vermifugados, tomam antiparasitários e, caso estejam saudáveis, iniciamos imediatamente as vacinas antirrábica e antiviróticas (V4 para os gatos e V10 para os cães), todas importadas. Caso estejam com algum problema de saúde, são submetidos a tratamento para só depois serem vacinados. Ah, e todos possuem cartões de vacinação!"
+  },
+  {
+    "image": "img/balaiodegato.jpeg",
+    "name": "Balaio de Gato",
+    "distance": "5",
+    "address": "Endereço do Balaio de Gato",
+    "website": "www.balaiodegato.com",
+    "email": "contato@balaiodegato.com",
+    "phone": "(00) 2468-1357",
+    "descricao": " O Abrigo Balaio de Gato, é um projeto independente de Minas Gerais, no qual ajudamos a resgatar, providenciamos tratamento veterinário e realizamos adoções de maneira responsável a cães e gatos recolhidos das ruas da capital, Belo Horizonte. Hoje mantemos aproximadamente 200 animais sob nossa responsabilidade e como não conseguimos resgatar e salvar a todos, trabalhamos também fazendo uma conscientização e orientação da população para que pessoas que encontrem um animal em perigo possam ajudar e também fazer a diferença! Atuamos de forma independente e voluntária, não contando com recursos governamentais e sobrevivendo graças ao apoio de voluntários; membros da Sociedade das Patinhas; apadrinhamentos; Parceiros do Balaio  e de colaborações esporádicas de pessoas que acreditam em nosso trabalho."
+  },
+  {
+    "image": "img/miaudota.jpeg",
+    "name": "MiauDota",
+    "distance": "5",
+    "address": "Endereço do MiauDota",
+    "website": "www.miaudota.com",
+    "email": "contato@miaudota.com",
+    "phone": "(00) 9876-5432",
+    "descricao": " Com o objetivo de acolher e abrigar cães e gatos em situação de risco e abandono, a Associação Cãoviver em Defesa dos Animais foi oficialmente fundada em agosto de 2003. O abrigo, instalado em um sítio inicialmente preparado para abrigar alguns poucos animais (o espaço foi utilizado no passado como estação de manejo destinada ao tratamento, reabilitação e reinserção a fauna de jaguatiricas apreendidas nas ações do IBAMA MG), hoje abriga mais de uma centena de cães e algumas dezenas de gatos. Durante todos esses anos de atividade, foram milhares de animais resgatados, muitos sem possibilidade de salvação, pois, via de regra, foram vítimas de abandono, atropelamento, espancamento dentre vários outros tipos de maus-tratos."
+  }
+]
+
+}

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="Scripts.js"></script>
+  <script src="https://kit.fontawesome.com/8abc0a1ef2.js" crossorigin="anonymous"></script>
+  <meta name="referrer" content="no-referrer">
+
+
+  <title>Pet Gets</title>
+</head>
+
+<body>
+  <header id="header-petgets">
+    <img src="../imagens/logo.jpeg" alt="logo" id="logo">
+    <img src="../imagens/logomarca.jpeg" alt="logo" id="marca">
+  </header>
+
+  <div class="menu">
+    <div class="topnav">
+      <a href="../HomePage/index.html">Home</a>
+      <a href="../Contatoshtml/contatos.html">Contato</a>
+      <a href="../duvidashtml/duvidas.html">Dúvidas</a>
+      <p> <button class="login" onclick="showCadastro()">Entrar</button> </p>
+    </div>
+
+    <div class="overlay"></div>
+
+    <div class="cadastro hidden">
+      <div class="conteudo-centralizado">
+        <div class="login-form hidden">
+          <ul>
+            <li>
+              <p class="form-title">Login</p>
+            </li>
+            <li><input id="loginCnpj" type="text" placeholder="CPF"></li>
+            <li><input id="loginSenha" type="password" placeholder="Senha"></li>
+            <li><button id="btnFazerLogin" onclick="validarLogin()">Entrar</button></li>
+
+          </ul>
+        </div>
+      </div>
+
+      <ul>
+        <li>
+          <div class="cadastro-right hidden">
+            <div class="conteudo-centralizado">
+              <p class="form-title">Cadastro de Usuário</p>
+        </li>
+        <li><input id="nomeInstituicao" type="text" placeholder="Nome de Usuário"></li>
+        <li><input type="text" id="cnpjInput" placeholder="Digite o CPF"></li>
+        <li><input type="password" id="senhaInput" placeholder="Senha"></li>
+        <li><input id="contato" type="text" placeholder="Contato (E-mail, Telefone)"></li>
+        <li><button id="criarConta" onclick="salvarDados()">Criar conta de Usuário</button></li>
+    </div>
+
+
+
+
+    <div class="container">
+      <div class="search">
+        <a class="pesquisar" href="" target="_blank"></a>
+        <input type="search" id="search-input" placeholder="Pesquisar...">
+        <div class="list">
+        </div>
+        <div class="icon">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <main>
+
+    <section id="jsonContainer">
+
+
+
+
+    </section>
+    <aside>
+      <div class="sidebar">
+        <h1>FILTROS</h1>
+        <ul id="filtros" class="itens">
+          <li>
+            <a>Espécie</a>
+            <button class="btn-filtro" onclick="toggleSubItens(this)">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <ul class="sub-itens esconder">
+              <li><a>
+                  <label class="form-control">
+                    <input type="checkbox" name="checkbox" id="checkbox-cachorro" value="cachorro">
+                    <span class="checkmark"></span>
+                  </label>
+                  Cachorro</a></li>
+              <li><a>
+                  <label class="form-control">
+                    <input type="checkbox" name="especie" id="checkbox-gato" value="gato">
+                    <span class="checkmark"></span>
+                  </label>
+                  Gato</a></li>
+            </ul>
+          </li>
+          <li>
+            <a>Sexo</a>
+            <button class="btn-filtro" onclick="toggleSubItens(this)">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <ul class="sub-itens esconder">
+              <li><a>
+                  <label class="form-control">
+                    <input type="checkbox" id="checkbox-femea" class="checkbox-sexo" value="femea">
+                    <span class="checkmark"></span>
+                  </label>
+                  Fêmea
+                </a></li>
+              <li><a>
+                  <label class="form-control">
+                    <input type="checkbox" id="checkbox-macho" class="checkbox-sexo" value="macho">
+                    <span class="checkmark"></span>
+                  </label>
+                  Macho</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+  </main>
+
+
+
+    
+
+      <button class="chatbot-toggler">
+        <span class="material-symbols-outlined">mode_comment</span>
+        <span class="material-symbols-outlined">close</span>
+      </button>
+      <div class="chatbot">
+        <header id="chatbot-header">
+          <h2>Chatbot</h2>
+        </header>
+        <ul class="chatbox">
+          <li class="chat incoming">
+            <span class="material-symbols-outlined">smart_toy</span>
+            <p>Olá <br> Em dúvida sobre qual pet adotar? Estou aqui para ajudar!</p>
+          </li>
+        </ul>
+        <div class="chat-input">
+          <textarea id = "pergunta"placeholder="Entre com uma pergunta..." required></textarea>
+          <span id="send-btn" class="material-symbols-outlined">send</span>
+        </div>
+
+      </div>
+
+    </aside>
+
+  </main>
+
+
+  <script>
+
+    const chatInput = document.querySelector(".chat-input textarea");
+    const sendChatBtn = document.querySelector(".chat-input span");
+    const chatbox = document.querySelector(".chatbox");
+    const chatbotToggler = document.querySelector(".chatbot-toggler")
+
+
+    let userMessage;
+
+    const creatChatLi = (message, className) => {
+        const chatLi = document.createElement("li");
+        chatLi.classList.add("chat", className);
+        let chatContent = className === "outgoing" ? `<p>${message}</p` : `<span class="material-symbols-outlined">smart_toy</span><p>${message}</p>`;
+        chatLi.innerHTML = chatContent;
+        return chatLi;
+    }
+
+    const handleChat = async () => {
+  userMessage = chatInput.value.trim();
+  if (!userMessage) return;
+
+  // Adicionar a mensagem do usuário ao chatbox
+  const userMessageLi = creatChatLi(userMessage, "outgoing");
+  chatbox.appendChild(userMessageLi);
+  chatbox.scrollTo(0, chatbox.scrollHeight);
+
+  // Adicionar a mensagem "Pensando..." ao chatbox
+  const thinkingMessage = creatChatLi("Pensando...", "incoming");
+  chatbox.appendChild(thinkingMessage);
+  chatbox.scrollTo(0, chatbox.scrollHeight);
+
+  try {
+    // Chamar a função que retorna a mensagem da API
+    const respostaDaApi = await enviarPergunta();
+
+    // Substituir a mensagem "Pensando..." pela resposta da API no chatbox
+    thinkingMessage.innerHTML = creatChatLi(respostaDaApi, "incoming").innerHTML;
+    chatbox.scrollTo(0, chatbox.scrollHeight);
+
+  } catch (error) {
+    console.error('Erro ao obter resposta da API:', error);
+  }
+  chatInput.value = '';
+}
+chatInput.addEventListener('keypress', function (e) {
+  // Verifica se a tecla pressionada é "Enter"
+  if (e.key === 'Enter') {
+    // Chama a função handleChat quando "Enter" é pressionado
+    handleChat();
+  }
+});
+
+
+    sendChatBtn.addEventListener("click", handleChat);
+
+    function showCadastro() {
+      const overlay = document.querySelector('.overlay');
+      const cadastro = document.querySelector('.cadastro');
+
+      overlay.classList.add('show');
+      cadastro.classList.remove('hidden');
+    }
+
+    document.addEventListener('click', function (event) {
+      const overlay = document.querySelector('.overlay');
+      const cadastro = document.querySelector('.cadastro');
+
+      if (event.target === overlay) {
+        overlay.classList.remove('show');
+        cadastro.classList.add('hidden');
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var loginButton = document.querySelector('.login');
+      var cadastroDiv = document.querySelector('.cadastro');
+      var overlayDiv = document.querySelector('.overlay');
+      var btnFazerLogin = document.getElementById('btnFazerLogin');
+
+      loginButton.addEventListener('click', function () {
+        cadastroDiv.classList.add('show');
+        overlayDiv.style.display = 'flex';
+      });
+
+      overlayDiv.addEventListener('click', function (event) {
+        if (event.target === overlayDiv) {
+          cadastroDiv.classList.remove('show');
+          overlayDiv.style.display = 'none';
+        }
+      });
+
+
+
+      // Adiciona um evento de clique ao botão "Criar conta Instituição"
+      var botaoCriarConta = document.getElementById("criarConta");
+      botaoCriarConta.addEventListener("click", salvarDados);
+
+      // Adiciona um evento de clique ao botão "Entrar"
+      var btnEntrar = document.getElementById('btnLogin');
+      btnEntrar.addEventListener('click', showCadastro);
+    });
+
+
+
+    function toggleSubItens(button) {
+      var subItens = button.nextElementSibling;
+      if (subItens.style.display === "block") {
+        subItens.style.display = "none";
+      } else {
+        subItens.style.display = "block";
+      }
+    }
+
+    window.onload = function () {
+      var subitens = document.getElementsByClassName("esconder");
+      for (var i = 0; i < subitens.length; i++) {
+        subitens[i].style.display = "none";
+      }
+    }
+
+    chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
+
+
+  </script>
+
+
+</body>
+
+</html>

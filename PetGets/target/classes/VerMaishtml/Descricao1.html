@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes do Animal</title>
+  <style>
+    /* Estilos CSS para o cabeçalho */
+    header {
+      background-color: #ff692a;
+      height: 60px;
+      width: 100%;
+      display: flex;
+      justify-content: left;
+    }
+
+    #logo {
+      margin-left: 50px;
+      padding: 2px;
+    }
+
+    #marca {
+      margin-left: auto;
+      padding: 2px;
+    }
+
+    .menu {
+      background-color: #ff692a;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      border: thin solid white;
+      display: flex;
+    }
+
+    .menu a {
+      text-align: center;
+      text-decoration: none;
+      color: whitesmoke;
+      padding: 16px 18px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .menu a:hover {
+      background-color: #256447;
+      color: white;
+    }
+
+    .topnav {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .topnav input[type="text"] {
+      padding: 6px;
+      border: none;
+      margin-top: 12px;
+      margin-right: 16px;
+      font-size: 17px;
+    }
+
+    @media screen and (max-width: 600px) {
+
+      .topnav a,
+      .topnav input[type="text"] {
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+      }
+
+      .topnav input[type="text"] {
+        border: 1px solid #ccc;
+      }
+    }
+
+    /* Estilos CSS para a página de detalhes do animal */
+    body {
+      background-color: #256447;
+    }
+
+   
+    h1 {
+      color: #ffffff;
+      margin-left: 12%;
+      text-transform: uppercase;
+      font-weight: 900;
+      font-size: 28px;
+      border-radius: 10px;
+      width: 40.125%;
+      padding: 5px;
+      padding-top: 2%;
+      
+    }
+
+    p {
+      color: #ffffff;
+      
+    }
+
+    h2 {
+      color: #fe8c00;
+      margin-top: 0;
+      margin-bottom: 5px;
+      font-size: 30px;
+      /* Tamanho da fonte */
+      -webkit-text-stroke: 0.45px rgb(255, 255, 255);
+      /* Borda colorida (webkit) */
+    }
+
+    .infos {
+      background-color: #0f3d2f82;
+      border-radius: 10px;
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+
+    #animal-info h2 {
+      margin-bottom: -10px;
+    }
+
+
+    #animal-container {
+      display: flex;
+      align-items: flex-start;
+      margin-left: 12%;
+      /* Margem esquerda de 12% para a imagem */
+      
+
+    }
+
+    #animal-image {
+      border-radius: 7px;
+      border: 2px solid white;
+      max-width: 500px;
+      margin-right: 20px;
+      margin-bottom: 50px;
+      
+    }
+
+    #animal-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      background-color: rgba(255, 255, 255, 0);
+
+    }
+
+    #animal-name {
+      font-size: 22px;
+      text-align: left;
+    }
+
+    #animal-breed {
+      font-size: 22px;
+      text-align: left;
+    }
+
+    #animal-age {
+      font-size: 22px;
+      text-align: left;
+    }
+
+    #animal-gender {
+      font-size: 22px;
+      text-align: left;
+    }
+
+    #animal-description {
+      font-size: 22px;
+      text-align: left;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="../imagens/logo.jpeg" alt="logo" id="logo">
+    <img src="../imagens/logomarca.jpeg" alt="logo" id="marca">
+  </header>
+
+  <div class="menu">
+    <div class="topnav">
+      <a href="../HomePage/index.html">Home</a>
+      <a href="../Formulariohtml/index.html">Formulário</a>
+      <a href="../Contatoshtml/contatos.html">Contato</a>
+      <a href="../duvidashtml/duvidas.html">Dúvidas</a>
+    </div>
+  </div>
+
+  <div class="infos">
+    <h1>Detalhes do Animal</h1>
+
+    <div id="animal-container">
+      <img id="animal-image" src="" alt="Foto do animal">
+      <div id="animal-info">
+        <h2>Nome do animal</h2>
+        <p id="animal-name"></p>
+        <h2>Raça</h2>
+        <p id="animal-breed"></p>
+        <h2>Idade</h2>
+        <p id="animal-age"></p>
+        <h2>Sexo</h2>
+        <p id="animal-gender"></p>
+        <h2>Descrição</h2>
+        <p id="animal-description"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Dados do animal
+    var animal = [{
+      name: "Floquinho",
+      species: "Canis Familiaris",
+      breed: "Dachshund",
+      age: "3 anos",
+      gender: "Macho",
+      description: "Super dócil, se adapta muito bem a novos donos e locais.",
+      image: "/imagens/c1.jpeg"
+    }, {
+      name: "Scott",
+      species: "Canis Familiaris",
+      breed: "Border Collie",
+      age: "8 anos",
+      gender: "Macho",
+      description: "Super dócil, se adapta muito bem a novos donos e locais.",
+      image: "/imagens/c2.jpeg"
+    }, {
+      name: "Nandinha",
+      species: "Canis Familiaris",
+      breed: "Poodle",
+      age: "10 anos",
+      gender: "Fêmea",
+      description: "Super dócil, se adapta muito bem a novos donos e locais.",
+      image: "/imagens/c3.jpeg"
+    }, {
+      name: "Eleutério",
+      species: "Felis Catus",
+      breed: "Maine Coon",
+      age: "2 anos",
+      gender: "Macho",
+      description: "Super dócil, se adapta muito bem a novos donos e locais.",
+      image: "/imagens/g1.jpeg"
+    }, {
+      name: "Beethoven",
+      species: "Felis Catus",
+      breed: "Siamês",
+      age: "8 anos",
+      gender: "Macho",
+      description: "Super dócil, se adapta muito bem a novos donos e locais.",
+      image: "/imagens/g2.jpeg"
+    }, {
+      name: "Marie",
+      species: "Felis Catus",
+      breed: "Persa",
+      age: "4 anos",
+      gender: "Fêmea",
+      description: "Super dócil, se adapta muito bem a novos donos e locais.",
+      image: "/imagens/g3.jpeg"
+    }, {
+      name: "Maxwell",
+      species: "Felis Catus",
+      breed: "Laranja",
+      age: "1 ano",
+      gender: "Macho",
+      description: "Super dócil, se adapta muito bem a novos donos e locais.",
+      image: "/imagens/g4.jpg"
+    }, {
+      name: "Kic 8462852",
+      species: "Felis Catus",
+      breed: "Indefinida",
+      age: "2 meses",
+      gender: "Macho",
+      description: "Super dócil, se adapta muito bem a novos donos e locais.",
+      image: "/imagens/g5.jpg"
+    }];
+
+
+    // Preenche as informações do animal na página
+    document.getElementById("animal-image").src = animal.image;
+    document.getElementById("animal-name").textContent = animal.name;
+    document.getElementById("animal-age").textContent = animal.age;
+    document.getElementById("animal-description").textContent = animal.description;
+
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const animalName = urlParams.get("animal");
+
+    // Dados dos animais
+    const animals = {
+      Floquinho: {
+        name: "Floquinho",
+        species: "Canis Familiaris",
+        breed: "Dachshund",
+        age: "3 anos",
+        gender: "Macho",
+        description: "Super dócil, se adapta muito bem a novos donos e locais.",
+        image: "../imagens/c1.jpeg",
+      },
+      Scott: {
+        name: "Scott",
+        species: "Canis Familiaris",
+        breed: "Border Collie",
+        age: "8 anos",
+        gender: "Macho",
+        description: "Super dócil, se adapta muito bem a novos donos e locais.",
+        image: "../imagens/c2.jpeg"
+      },
+      Nandinha: {
+        name: "Nandinha",
+        species: "Canis Familiaris",
+        breed: "Poodle",
+        age: "10 anos",
+        gender: "Fêmea",
+        description: "Super dócil, se adapta muito bem a novos donos e locais.",
+        image: "../imagens/c3.jpeg"
+      },
+      Eleuterio: {
+        name: "Eleutério",
+        species: "Felis Catus",
+        breed: "Maine Coon",
+        age: "2 anos",
+        gender: "Macho",
+        description: "Super dócil, se adapta muito bem a novos donos e locais.",
+        image: "../imagens/g1.jpeg"
+      },
+      Beethoven: {
+        name: "Beethoven",
+        species: "Felis Catus",
+        breed: "Siamês",
+        age: "8 anos",
+        gender: "Macho",
+        description: "Super dócil, se adapta muito bem a novos donos e locais.",
+        image: "../imagens/g2.jpeg"
+      },
+      Marie: {
+        name: "Marie",
+        species: "Felis Catus",
+        breed: "Persa",
+        age: "4 anos",
+        gender: "Fêmea",
+        description: "Super dócil, se adapta muito bem a novos donos e locais.",
+        image: "../imagens/g3.jpeg"
+      },
+      Maxwell: {
+        name: "Maxwell",
+        species: "Felis Catus",
+        breed: "Laranja",
+        age: "1 ano",
+        gender: "Macho",
+        description: "Super dócil, se adapta muito bem a novos donos e locais.",
+        image: "../imagens/g4.jpg"
+      },
+      Kic: {
+        name: "Kic 8462852",
+        species: "Felis Catus",
+        breed: "Indefinida",
+        age: "2 meses",
+        gender: "Macho",
+        description: "Super dócil, se adapta muito bem a novos donos e locais.",
+        image: "../imagens/g5.jpg"
+      },
+    };
+
+
+
+    if (animals.hasOwnProperty(animalName)) {
+      const selectedAnimal = animals[animalName];
+      document.getElementById("animal-image").src = selectedAnimal.image;
+      document.getElementById("animal-name").textContent = selectedAnimal.name;
+      document.getElementById("animal-breed").textContent = selectedAnimal.breed;
+      document.getElementById("animal-age").textContent = selectedAnimal.age;
+      document.getElementById("animal-gender").textContent = selectedAnimal.gender;
+      document.getElementById("animal-description").textContent = selectedAnimal.description;
+    }
+
+  </script>
+</body>
+
+</html>

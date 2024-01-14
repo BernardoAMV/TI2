@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT - Sistema de Adoção de Pets</title>
+</head>
+<body>
+
+    <h1>Sistema de Adoção de Pets</h1>
+
+    <form id="chatForm">
+        <label for="pergunta">Faça uma pergunta sobre a adoção de pets:</label>
+        <input type="text" id="pergunta" name="pergunta" required>
+        <button type="button" onclick="enviarPergunta()">Enviar Pergunta</button>
+    </form>
+
+    <div id="respostaDoServidor"></div>
+
+    <script>
+      async function enviarPergunta() {
+    var pergunta = document.getElementById("pergunta").value;
+    var data = {
+        pergunta: pergunta
+    };
+
+    const dados = {
+        method: 'POST',
+        body: JSON.stringify(data)
+    };
+
+    try {
+        const response = await fetch('http://localhost:5554/gpt/pedido', dados);
+
+        if (!response.ok) {
+            throw new Error(`Erro na solicitação: ${response.status}`);
+        }
+
+        const responseData = await response.json();
+        console.log(responseData);
+
+        // Manipular a resposta recebida do servidor
+        var respostaDoServidor = responseData.choices[0].message.content;
+        document.getElementById("respostaDoServidor").innerHTML = "Resposta do servidor: " + respostaDoServidor;
+
+    } catch (error) {
+        console.error('Erro na solicitação:', error);
+    }
+}
+    
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CRUD de Usuários</title>
+    <style>
+        /* Estilos de formatação */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class ="container">
+        <h1>CRUD de Usuários</h1>
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nomeInstituicao" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cnpj" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" id="contato" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="senha">Senha:</label>
+            <input type="text" id="senha" class="form-control">
+        </div>
+        <div class="form-group">
+            <button onclick="insereUsuario()">Inserir </button>
+            <button onclick="atualizarUsuario()">Atualizar </button>
+            <button onclick="listaUsuarios()">Listar </button>
+            <button onclick="deleteUsuario()">Deletar</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Email</th>
+                    <th>Senha</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaUsuarios">
+                <!-- Os dados da lista de usuários serão exibidos aqui -->
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container">
+        <h1>CRUD de Instituições</h1>
+        <div class="form-group">
+            <label for="nomeInstituicao">Nome da Instituição:</label>
+            <input type="text" id="nomeDaInstituicao" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="cnpj">CNPJ:</label>
+            <input type="text" id="cnpjInstituicao" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="senha">Email de Contato:</label>
+            <input type="text" id="emailInstituicao" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="contato">Senha:</label>
+            <input type="text" id="senhaInstituicao" class="form-control">
+        </div>
+        <div class="form-group">
+            <button onclick="insereInstituicao()">Inserir</button>
+            <button onclick="atualizarInstituicao()">Atualizar</button>
+            <button onclick="listaInstituicoes()">Listar</button>
+            <button onclick="deleteInstituicao()">Deletar</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Cnpj</th>
+                    <th>Email</th>
+                    <th>Senha</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaInstituicoes">
+                <!-- Os dados da lista de usuários serão exibidos aqui -->
+            </tbody>
+        </table>
+    
+
+    <script>
+        
+        // Dados iniciais carregado a partir do backend
+
+        // Função para listar os usuários na tabela
+    async function listaUsuarios(){
+    
+    var usuarios = await fetch('http://localhost:5554/usuario/list').then(data => data.json())
+
+    usuarios = usuarios.usuarios
+
+    const tabelaUsuarios = document.getElementById('tabelaUsuarios');
+
+
+    tabelaUsuarios.innerHTML = "";
+
+    usuarios.forEach(element => {
+        const row = tabelaUsuarios.insertRow();
+                const cellNome = row.insertCell(0);
+                const cellCPF = row.insertCell(1);
+                const cellEmail = row.insertCell(2);
+                const cellSenha = row.insertCell(3);
+
+                cellNome.innerText = element.nomeInstituicao;
+                cellCPF.innerText = element.cnpj;
+                cellEmail.innerText = element.contato;
+                cellSenha.innerText = element.senha;
+    
+    });
+    
+    
+}
+
+
+async function insereUsuario(){
+  var nomeInstituicao = document.getElementById("nomeInstituicao").value;
+  var cnpj = document.getElementById("cnpj").value;
+  var senha = document.getElementById("senha").value;
+  var contato = document.getElementById("contato").value;
+
+  // Verifica se os campos estão preenchidos
+  if (nomeInstituicao && cnpj && senha && contato) {
+    // Cria um objeto com os dados
+    var dados = {
+      nomeInstituicao: nomeInstituicao,
+      cnpj: cnpj,
+      senha: senha,
+      contato: contato
+    };
+
+    // Converte o objeto em uma string JSON
+    const options = {
+      method : 'POST',
+      body : JSON.stringify(dados)
+
+    };
+    
+    var usuarios = await fetch('http://localhost:5554/usuario/insert', options)
+    .then(response => response.json())
+    .then(data => {
+    console.log('Usuário inserido com sucesso:', data);
+    // Você pode realizar outras ações aqui após a inserção bem-sucedida
+})
+.catch(error => {
+    console.error('Erro ao inserir usuário:', error);
+});
+
+document.getElementById("nomeInstituicao").value ="";
+document.getElementById("cnpj").value = "";
+document.getElementById("senha").value = "";
+document.getElementById("contato").value = "";
+document.getElementById("cnpj").value = "";
+}
+}
+
+
+function deleteUsuario(){
+    let strcodigo = document.getElementById("cnpj").value;
+    fetch(`http://localhost:5554/usuario/delete?cnpj=${strcodigo}`)
+    .then(response => response.json())
+    .then(data => {
+            console.log('Usuário deletado com sucesso');
+            
+        })
+        .catch(error => {
+            console.error('Erro ao atualizar usuário:', error);
+        });
+
+}
+
+function atualizarUsuario(){
+  var nomeInstituicao = document.getElementById("nomeInstituicao").value;
+  var cnpj = document.getElementById("cnpj").value;
+  var senha = document.getElementById("senha").value;
+  var contato = document.getElementById("contato").value;
+  var dados = {
+      nomeInstituicao: nomeInstituicao,
+      cnpj: cnpj,
+      senha: senha,
+      contato: contato
+    };
+    const options = {
+        method: 'POST',
+        body : JSON.stringify(dados)
+    };
+    var usuarios = fetch('http://localhost:5554/usuario/update', options)
+        .then(response => response.json())
+        .then(data => {
+            console.log('Usuário atualizado com sucesso:', data);
+            
+        })
+        .catch(error => {
+            console.error('Erro ao atualizar usuário:', error);
+        });
+        document.getElementById("nomeInstituicao").value ="";
+        document.getElementById("cnpj").value = "";
+        document.getElementById("senha").value = "";
+        document.getElementById("contato").value = "";
+        document.getElementById("cnpj").value = "";
+}
+
+async function listaInstituicoes() {
+    var instituicoes = await fetch('http://localhost:5554/Instituicao/list').then(data => data.json());
+
+    instituicoes = instituicoes.instituicoes;
+
+    const tabelaInstituicoes = document.getElementById('tabelaInstituicoes');
+
+    tabelaInstituicoes.innerHTML = "";
+
+    instituicoes.forEach(element => {
+        const row = tabelaInstituicoes.insertRow();
+        const cellNome = row.insertCell(0);
+        const cellCNPJ = row.insertCell(1);
+        const cellContato = row.insertCell(2);
+        const cellSenha = row.insertCell(3);
+
+        cellNome.innerText = element.nomeDaInstituicao;
+        cellCNPJ.innerText = element.cnpjInstituicao;
+        cellContato.innerText = element.emailInstituicao;
+        cellSenha.innerText = element.senhaInstituicao;
+    });
+}
+
+async function insereInstituicao() {
+    var nomeInstituicao = document.getElementById("nomeDaInstituicao").value;
+    var cnpj = document.getElementById("cnpjInstituicao").value;
+    var senha = document.getElementById("senhaInstituicao").value;
+    var contato = document.getElementById("emailInstituicao").value;
+
+    // Verifica se os campos estão preenchidos
+    if (nomeInstituicao && cnpj && senha && contato) {
+        // Cria um objeto com os dados
+        var dados = {
+            nomeDaInstituicao: nomeInstituicao,
+            cnpjInstituicao: cnpj,
+            senhaInstituicao: senha,
+            emailInstituicao: contato
+        };
+
+        // Converte o objeto em uma string JSON
+        const options = {
+            method: 'POST',
+            body: JSON.stringify(dados)
+        };
+
+        var instituicoes = await fetch('http://localhost:5554/Instituicao/insert', options)
+            .then(response => response.json())
+            .then(data => {
+                console.log('Instituição inserida com sucesso:', data);
+                // Você pode realizar outras ações aqui após a inserção bem-sucedida
+            })
+            .catch(error => {
+                console.error('Erro ao inserir instituição:', error);
+            });
+
+        document.getElementById("nomeDaInstituicao").value = "";
+        document.getElementById("cnpjInstituicao").value = "";
+        document.getElementById("senhaInstituicao").value = "";
+        document.getElementById("emailInstituicao").value = "";
+    }
+}
+
+function deleteInstituicao() {
+    let cnpj = document.getElementById("cnpjInstituicao").value;
+    fetch(`http://localhost:5554/Instituicao/delete?cnpjInstituicao=${cnpj}`)
+        .then(response => response.json())
+        .then(data => {
+            console.log('Instituição deletada com sucesso');
+        })
+        .catch(error => {
+            console.error('Erro ao deletar instituição:', error);
+        });
+        document.getElementById("cnpjInstituicao").value = "";
+}
+
+function atualizarInstituicao() {
+    var nomeInstituicao = document.getElementById("nomeDaInstituicao").value;
+    var cnpj = document.getElementById("cnpjInstituicao").value;
+    var senha = document.getElementById("senhaInstituicao").value;
+    var contato = document.getElementById("emailInstituicao").value;
+
+    var dados = {
+        nomeDaInstituicao: nomeInstituicao,
+        cnpjInstituicao: cnpj,
+        senhaInstituicao: senha,
+        emailInstituicao: contato
+    };
+
+    const options = {
+        method: 'POST',
+        body: JSON.stringify(dados)
+    };
+    var instituicoes = fetch('http://localhost:5554/Instituicao/update', options)
+        .then(response => response.json())
+        .then(data => {
+            console.log('Instituição atualizada com sucesso:', data);
+        })
+        .catch(error => {
+            console.error('Erro ao atualizar instituição:', error);
+        });
+        document.getElementById("nomeDaInstituicao").value = "";
+        document.getElementById("cnpjInstituicao").value = "";
+        document.getElementById("senhaInstituicao").value = "";
+        document.getElementById("emailInstituicao").value = "";
+}
+
+    </script>
+</body>
+</html>

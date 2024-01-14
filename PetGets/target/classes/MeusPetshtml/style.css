@@ -1,0 +1,717 @@
+html {
+    height: 100%;
+    width: 100%;
+}
+
+section {
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+main {
+    display: flex;
+}
+
+
+.sidebar h1 {
+    position: relative;
+    width: 170px;
+    height: 66px;
+    left: 10px;
+    top: -30px;
+    font-family: 'Kadwa';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 80px;
+    border-bottom: 2px solid white;
+    padding-bottom: 0px;
+    color: #FFFFFF;
+}
+
+@media screen and (max-width: 600px) {
+    .sidebar h1 {
+        position: relative;
+        left: 0;
+        top: 0;
+    }
+}
+
+.sidebar ul li a {
+    position: relative;
+    height: 25px;
+    left: -30px;
+    top: -55px;
+    font-family: 'Kadwa';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 40px;
+    text-decoration: none;
+    color: #FFFFFF;
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+    
+}
+
+.filtrar {
+    border-radius: 100px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.btn-filtro {
+    position: relative;
+    left: -30px;
+    top: -55px;
+    background-color: #256447;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+button i {
+    background-color: #256447;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.esconder {
+    display: none;
+}
+
+
+
+:root {
+    --form-control-color: #ff692a;
+    --form-control-disabled: #959495;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+form {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+}
+
+.form-control {
+    font-family: system-ui, sans-serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+    line-height: 1.1;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+}
+
+.form-control+.form-control {
+    margin-top: 1em;
+}
+
+.form-control--disabled {
+    color: var(--form-control-disabled);
+    cursor: not-allowed;
+}
+
+input[type="checkbox"] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    /* Remove most all native input styles */
+    appearance: none;
+    /* For iOS < 15 */
+    background-color: var(--form-background);
+    /* Not removed via appearance */
+    margin: 0;
+
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.13em solid currentColor;
+    border-radius: 0.20em;
+    transform: translateY(-0.0075em);
+
+    display: inline-block;
+    place-content: center;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    width: 0.85em;
+    height: 0.85em;
+    clip-path: polygon(10% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform: scale(0);
+    transform-origin: bottom left;
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+    /* Windows High Contrast Mode */
+    background-color: CanvasText;
+    display: inline-block;
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+input[type="checkbox"]:focus {
+    outline: max(0px, 0.0995555em) solid currentColor;
+    outline-offset: max(0px, 0.15em);
+}
+
+input[type="checkbox"]:disabled {
+    --form-control-color: var(--form-control-disabled);
+
+    color: var(--form-control-disabled);
+    cursor: not-allowed;
+}
+
+
+/* Paulo code */
+
+body {
+    font-family: 'Kadwa';
+    margin: 0px;
+    border: 0px;
+    padding: 0%;
+    background-image: url('../imagens/fundo1.jpg');
+    background-size: cover;
+}
+
+#search {
+    border-radius: 8px
+}
+
+header {
+    background-color: #ff692a;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+}
+
+#logo {
+    position: relative;
+    max-width: 100%;
+    margin: 5px 20px;
+
+}
+
+
+#marca {
+    position: relative;
+    left: 86%;
+    transform: translateX(-100%);
+}
+
+@media screen and (max-width: 600px) {
+    #marca {
+        left: 0;
+        transform: none;
+    }
+}
+
+.menu {
+    background-color: #bd4300;
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+    border: thin solid white;
+    display: flex;
+    align-items: center;
+}
+
+
+.menu a {
+    font-family: 'Kadwa';
+    float: left;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: whitesmoke;
+    padding: 23px 50px;
+    font-size: 20px;
+    font-weight: bold;
+    font-weight: 400;
+
+}
+
+.menu p {
+    margin: 0 0;
+    font-family: 'Kadwa';
+    float: left;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: whitesmoke;
+    padding: 21px 50px;
+    font-size: 20px;
+    font-weight: bold;
+    font-weight: 400;
+
+}
+
+.login {
+    font-family: 'Kadwa';
+    float: left;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 20px;
+    font-weight: bold;
+    font-weight: 400;
+    background-color: #bd4300;
+    border-radius: 6px;
+    padding: 15px 10px;
+    margin: -15px;
+    border: 2px solid;
+
+}
+
+.login:hover {
+    background-color: #256447;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+
+}
+
+.cadastro {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffffb7;
+    padding: 20px;
+    z-index: 1000;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.35s ease-in-out;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+.login-form {
+    flex: 1; /* Ocupar todo o espaço disponível à esquerda */
+}
+
+.login-form,
+.cadastro-right {
+    float: left;
+    width: 45%;
+    text-align: left;
+    display: flex; /* Adicionando esta propriedade */
+    flex-direction: column; /* Alinhar os elementos verticalmente */
+}
+
+.cadastro-right {
+    text-align: right;
+}
+
+.cadastro.show .login-form,
+.cadastro.show .cadastro-right {
+    display: block; /* Mostrar os elementos quando .show é aplicada */
+}
+
+.cadastro.show {
+    opacity: 1;
+    /* Quando a classe "show" for adicionada, a tela de cadastro será exibida */
+    
+}
+
+.cadastro ul {
+    text-decoration: none;
+    list-style: none;
+    margin: 0px 0px;
+
+    flex: 1;
+}
+
+.cadastro a {
+    color: #256447;
+
+}
+
+.conteudo-centralizado {
+    text-align: center;
+}
+
+.conteudo-centralizado a {
+    display: block;
+    text-align: left;
+}
+
+.cadastro ul li p {
+    background-color: #ff692a;
+    border-radius: 6px;
+    margin: 10px 18px;
+    
+
+}
+
+.cadastro ul li {
+    margin: 10px;
+}
+
+.cadastro input {
+    background-color: #ffffffab;
+    padding: 20px;
+    z-index: 1000;
+    border-radius: 10px;
+}
+
+.cadastro button {
+    border: thin solid white;
+    padding: 20px;
+    background-color: #256447;
+    color: white;
+    border-radius: 6px;
+    width: 206px;
+
+}
+
+.cadastro.hidden {
+    display: none;
+}
+
+button.login:hover {
+    cursor: pointer
+}
+
+.login-form ul li p {
+    text-align: center;
+    align-items: center;
+    margin: 25px;  
+    position: absolute;
+    top: 45px; 
+    
+}
+
+
+
+.menu a:hover {
+    background-color: #256447;
+    color: white;
+}
+
+main {
+    display: flex;
+}
+
+section {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+aside {
+    width: 0%;
+    word-wrap: break-word;
+    background-color:#256447;
+    display: none;
+}
+
+footer {
+    background-color: #ff692a;
+    position: relative;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}
+
+.card {
+    height: flex;
+    width: 315px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #bd4300;
+    margin-top: 20px;
+    border: 2px solid white;
+}
+
+.card-image img {
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+    object-fit:contain;
+
+}
+
+.card-content h3 {
+    margin-top: 7px;
+    text-align: center;
+    margin-bottom: 7px;
+    color: #fff;
+    border: 2px solid white;
+    border-radius: 1px;
+    background-color: #256447;
+    font-size: 1.125rem;
+    line-height: 23px;
+    color: rgb(240, 240, 240);
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    
+}
+
+
+.card-content ul {
+    font-size: 20px;
+    margin-bottom: -20px;
+    color: #fff;
+    padding-left: 5px;
+    position: relative;
+    top: -25px;
+}
+
+.card-content ul li {
+    margin-bottom: 3px;
+}
+
+.card-content button {
+    width: 80px;
+    height: 45px;
+    margin-top: 8px;
+    background-color: #256447;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0px 10px;
+    cursor: pointer;
+    font-size: large;
+    border: 2px solid white;
+}
+
+.gambiarra {
+    width: 80px;
+    height: 45px;
+    margin-top: 8px;
+    background-color: #256447;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0px 10px;
+    cursor: pointer;
+    font-size: large;
+    border: 2px solid white;
+    margin-right: 117px;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.card ul li {
+    list-style-type: none;
+}
+
+footer p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+.sidebar ul li a {
+    position: relative;
+    top: -55px;
+    height: 25px;
+    font-family: 'Kadwa';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 40px;
+    text-decoration: none;
+    color: #FFFFFF;
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+    left: -30px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.btn-filtro {
+    position: relative;
+    background-color: #256447;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    top: -55px;
+    left: -30px;
+}
+
+button i {
+    background-color: #256447;
+    color: #FFFFFF;
+}
+
+.esconder {
+    display: none;
+}
+
+.topnav {
+    width: 75%;
+}
+
+.topnav input[type=text] {
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 12px;
+    margin-right: 16px;
+    font-size: 17px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 410px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    margin: 5px 0px;
+
+}
+
+.container .search {
+    background: #FFFFFF;
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.20);
+}
+
+.search input {
+    height: 55px;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 0 60px 0 20px;
+    font-size: 18px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.10);
+}
+
+.search .list {
+    padding: 0;
+    opacity: 0;
+    pointer-events: none;
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+.list li {
+    list-style: none;
+    padding: 8px 12px;
+    display: none;
+    width: 100%;
+    cursor: default;
+    border-radius: 3px;
+}
+
+.list li:hover {
+    background: #efefef;
+}
+
+.search .icon {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 55px;
+    width: 55px;
+    text-align: center;
+    line-height: 55px;
+    font-size: 20px;
+    color: black;
+    cursor: pointer;
+}
+
+a.pesquisar {
+    padding: 0px;
+}
+
+button a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+    .sidebar {
+        display: none;
+    }
+
+    #marca {
+        display: none;
+    }
+
+    .topnav a,
+    .topnav input[type=text] {
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+    }
+
+    .topnav input[type=text] {
+        border: 1px solid #ccc;
+    }
+}
+
+@media screen and (max-width: 1030px) {
+    .sidebar {
+        display: none;
+    }
+
+    #marca {
+        display: none;
+    }
+
+    .container {
+        background-color: #bd4300
+    }
+}
+
